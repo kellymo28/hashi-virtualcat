@@ -6,7 +6,7 @@ data "hcp_packer_artifact" "linux-images" {
 }
 
 resource "aws_instance" "hashicat" {
-  ami                         = data.hcp_packer_artifact.linux-images.external-identifier
+  ami                         = data.hcp_packer_artifact.linux-images.external_identifier
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.hashicat.key_name
   associate_public_ip_address = true
